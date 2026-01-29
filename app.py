@@ -12,15 +12,30 @@ app = FastAPI()
 # 📄 CONFIG PDF
 CHEMIN_PDF = "iFP.planning.pdf"   # ⬅️ mets le bon nom ici
 MES_INITIALES = "GBd"
+# ===============================
+# 📝 MESSAGES CLIENT – À MODIFIER ICI
+# ===============================
 
-# ✏️ ICI TU MODIFIES TES CONSIGNES CLIENT
-INFOS_CLIENT = """
+# 🔒 Message PERMANENT (consignes fixes)
+INFOS_PERMANENTES = """
 <ul>
-<li>Merci d’arriver 10 minutes en avance</li>
-<li>Créneaux de 30 minutes</li>
-<li>Annulation minimum 24h à l’avance</li>
+  <li>Merci d’arriver au moins <strong>45 minutes avant</strong>l'heure de vol</li>
+  <li>Ce site ne permet pas de réserver mais simplement de voir mes créneaux de vols<br>
+  Pour réserver, entrer votre bon cadeau sur le site iflyfrance.com</li>
+  <li>Coaching niveau 1 ventre</li>
+  <li>Coaching niveau 2 dos</li>
 </ul>
 """
+
+# 🔥 Message PONCTUEL / PROMO (modifiable ou supprimable)
+MESSAGE_PONCTUEL = """
+<p>
+🎉 <strong>OFFRE DU MOMENT</strong><br>
+1 mois offert pour tout nouvel abonnement club <br>
+Valable jusqu’au 31/01
+</p>
+"""
+
 
 @app.get("/", response_class=HTMLResponse)
 def afficher_calendrier():
@@ -45,6 +60,16 @@ def afficher_calendrier():
                 max-width: 1200px;
                 margin: auto;
                 padding: 20px;
+            }}
+            .promo {{
+                background: #fff3cd;
+                border-left: 6px solid #ffb300;
+                padding: 15px;
+                margin-bottom: 30px;
+                font-size: 16px;
+            }}
+            .promo strong {{
+                color: #c77700;
             }}
             .header {{
                 display: flex;
@@ -100,7 +125,11 @@ def afficher_calendrier():
 
         <div class="infos">
             <h3>📌 Informations importantes</h3>
-            {INFOS_CLIENT}
+            {INFOS_PERMANENTES}
+        </div>
+
+        <div class="promo">
+            {MESSAGE_PONCTUEL}
         </div>
 
         {calendrier}
