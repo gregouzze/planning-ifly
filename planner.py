@@ -2,8 +2,6 @@
 
 # planner.py
 
-# planner.py
-
 from datetime import datetime, timedelta
 from rotations import creneaux_pour_rotation
 

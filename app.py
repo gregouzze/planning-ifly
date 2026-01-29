@@ -44,7 +44,6 @@ def afficher_calendrier():
     planning = extraire_mon_planning(CHEMIN_PDF, MES_INITIALES)
 
     # 🧠 2. Génération du HTML
-    planning = extraire_mon_planning("iFP.planning.pdf", "GBd")
     calendrier = generer_calendrier(planning)
 
     html = f"""
@@ -53,68 +52,66 @@ def afficher_calendrier():
         <title>Disponibilités Greg</title>
 
         <style>
-            body {
+            body {{
                 font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
                 background-color: #f2f4f7;
                 margin: 0;
                 padding: 0;
                 color: #1f2937;
-            }
+            }}
 
-            .container {
+            .container {{
                 max-width: 1200px;
                 margin: auto;
                 padding: 25px;
-            }
+            }}
 
-            .header {
+            .header {{
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
                 margin-bottom: 30px;
-            }
+            }}
 
-            h1 {
+            h1 {{
                 margin: 0;
                 font-size: 32px;
                 color: #003A8F;
-            }
+            }}
 
-            .logo {
+            .logo {{
                 height: 55px;
-            }
+            }}
 
-            /* === MESSAGE PROMO / PONCTUEL === */
-            .promo {
+            .promo {{
                 background: #fff3cd;
                 border-left: 6px solid #ffb300;
                 padding: 15px;
                 margin-bottom: 30px;
                 font-size: 16px;
                 border-radius: 6px;
-            }
+            }}
 
-            .promo strong {
+            .promo strong {{
                 color: #c77700;
-            }
+            }}
 
-            /* === INFOS PERMANENTES === */
-            .infos {
+            .infos {{
                 background: #ffffff;
                 padding: 18px;
                 border-left: 6px solid #00AEEF;
                 margin-bottom: 35px;
                 border-radius: 6px;
-            }
+            }}
 
-            h2 {
+            h2 {{
                 margin-top: 45px;
                 margin-bottom: 10px;
                 color: #003A8F;
                 font-size: 22px;
-            }
+            }}
 
-            table {
+            table {{
                 width: 100%;
                 border-collapse: collapse;
                 background: white;
@@ -122,34 +119,34 @@ def afficher_calendrier():
                 overflow: hidden;
                 box-shadow: 0 6px 18px rgba(0,0,0,0.05);
                 margin-bottom: 35px;
-            }
+            }}
 
-            th {
+            th {{
                 background-color: #003A8F;
                 color: white;
                 padding: 14px;
                 font-weight: 600;
                 font-size: 15px;
-            }
+            }}
 
-            th.weekend {
+            th.weekend {{
                 background-color: #002a66;
-            }
+            }}
 
-            td {
+            td {{
                 padding: 14px;
                 text-align: center;
                 border: 1px solid #e5e7eb;
                 vertical-align: top;
                 min-height: 90px;
-            }
+            }}
 
-            td.today {
+            td.today {{
                 background-color: #e6f6ff;
                 border: 2px solid #00AEEF;
-            }
+            }}
 
-            .slot {
+            .slot {{
                 display: inline-block;
                 background: linear-gradient(135deg, #00AEEF, #0090c9);
                 color: white;
@@ -159,12 +156,13 @@ def afficher_calendrier():
                 font-size: 14px;
                 font-weight: 500;
                 box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-            }
+            }}
 
-            .empty {
+            .empty {{
                 color: #9ca3af;
                 font-size: 14px;
-            }
+            }}
+
         </style>
         
     </head>
