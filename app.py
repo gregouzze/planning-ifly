@@ -51,69 +51,122 @@ def afficher_calendrier():
     <html>
     <head>
         <title>Disponibilités Greg</title>
+
         <style>
-            body {{
-                font-family: Arial, sans-serif;
-                background-color: #f4f6f8;
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+                background-color: #f2f4f7;
                 margin: 0;
-            }}
-            .container {{
+                padding: 0;
+                color: #1f2937;
+            }
+
+            .container {
                 max-width: 1200px;
                 margin: auto;
-                padding: 20px;
-            }}
-            .promo {{
+                padding: 25px;
+            }
+
+            .header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 30px;
+            }
+
+            h1 {
+                margin: 0;
+                font-size: 32px;
+                color: #003A8F;
+            }
+
+            .logo {
+                height: 55px;
+            }
+
+            /* === MESSAGE PROMO / PONCTUEL === */
+            .promo {
                 background: #fff3cd;
                 border-left: 6px solid #ffb300;
                 padding: 15px;
                 margin-bottom: 30px;
                 font-size: 16px;
-            }}
-            .promo strong {{
+                border-radius: 6px;
+            }
+
+            .promo strong {
                 color: #c77700;
-            }}
-            .header {{
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }}
-            h1 {{
-                color: #003A8F;
-            }}
-            .logo {{
-                height: 60px;
-            }}
-            .infos {{
-                background: white;
-                padding: 15px;
+            }
+
+            /* === INFOS PERMANENTES === */
+            .infos {
+                background: #ffffff;
+                padding: 18px;
                 border-left: 6px solid #00AEEF;
-                margin: 30px 0;
-            }}
-            table {{
+                margin-bottom: 35px;
+                border-radius: 6px;
+            }
+
+            h2 {
+                margin-top: 45px;
+                margin-bottom: 10px;
+                color: #003A8F;
+                font-size: 22px;
+            }
+
+            table {
                 width: 100%;
                 border-collapse: collapse;
                 background: white;
-                margin-bottom: 30px;
-            }}
-            th {{
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+                margin-bottom: 35px;
+            }
+
+            th {
                 background-color: #003A8F;
                 color: white;
-                padding: 10px;
-            }}
-            td {{
-                padding: 15px;
-                border: 1px solid #ddd;
-            }}
-            .slot {{
+                padding: 14px;
+                font-weight: 600;
+                font-size: 15px;
+            }
+
+            th.weekend {
+                background-color: #002a66;
+            }
+
+            td {
+                padding: 14px;
+                text-align: center;
+                border: 1px solid #e5e7eb;
+                vertical-align: top;
+                min-height: 90px;
+            }
+
+            td.today {
+                background-color: #e6f6ff;
+                border: 2px solid #00AEEF;
+            }
+
+            .slot {
                 display: inline-block;
-                background-color: #00AEEF;
+                background: linear-gradient(135deg, #00AEEF, #0090c9);
                 color: white;
-                padding: 6px 12px;
-                margin: 4px;
-                border-radius: 6px;
+                padding: 7px 14px;
+                margin: 5px 4px;
+                border-radius: 20px;
                 font-size: 14px;
-            }}
+                font-weight: 500;
+                box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+            }
+
+            .empty {
+                color: #9ca3af;
+                font-size: 14px;
+            }
         </style>
+        
     </head>
     <body>
 

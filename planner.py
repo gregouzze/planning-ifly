@@ -44,7 +44,8 @@ def generer_calendrier(planning):
         # 🗓️ En-têtes avec jour + numéro
         for i, jour in enumerate(JOURS):
             date_jour = lundi + timedelta(days=i)
-            html += f"<th>{jour} {date_jour.strftime('%d')}</th>"
+            classe = "weekend" if jour in ["Samedi", "Dimanche"] else ""
+            html += f"<th class='{classe}'>{jour} {date_jour.strftime('%d')}</th>"
 
         html += "</tr><tr>"
 
@@ -56,9 +57,11 @@ def generer_calendrier(planning):
             if creneaux:
                 cell = "".join(f"<div class='slot'>{c}</div>" for c in creneaux)
             else:
-                cell = "<span style='color:#bbb'>—</span>"
+                cell = "<div class='empty'>Aucune disponibilité</div>"
 
-            html += f"<td>{cell}</td>"
+            today = datetime.today().strftime("%Y-%m-%d")
+            classe = "today" if jour_date == today else ""
+            html += f"<td class='{classe}'>{cell}</td>"
 
         html += "</tr></table>"
 
