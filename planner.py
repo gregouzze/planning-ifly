@@ -36,15 +36,19 @@ def generer_calendrier(planning):
     for lundi_iso in sorted(semaines.keys()):
         lundi = datetime.strptime(lundi_iso, "%Y-%m-%d")
 
+        # 📅 Titre en JJ/MM/AAAA
         html += f"<h2>Semaine du {lundi.strftime('%d/%m/%Y')}</h2>"
-        html += "<table>"
-        html += "<tr>"
 
-        for jour in JOURS:
-            html += f"<th>{jour}</th>"
+        html += "<table><tr>"
+
+        # 🗓️ En-têtes avec jour + numéro
+        for i, jour in enumerate(JOURS):
+            date_jour = lundi + timedelta(days=i)
+            html += f"<th>{jour} {date_jour.strftime('%d')}</th>"
 
         html += "</tr><tr>"
 
+        # ⏰ Créneaux
         for i in range(7):
             jour_date = (lundi + timedelta(days=i)).strftime("%Y-%m-%d")
             creneaux = semaines[lundi_iso].get(jour_date, [])
