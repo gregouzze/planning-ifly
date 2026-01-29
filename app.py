@@ -44,6 +44,7 @@ def afficher_calendrier():
     planning = extraire_mon_planning(CHEMIN_PDF, MES_INITIALES)
 
     # 🧠 2. Génération du HTML
+    planning = extraire_mon_planning("iFP.planning.pdf", "GBd")
     calendrier = generer_calendrier(planning)
 
     html = f"""
