@@ -32,7 +32,7 @@ MESSAGE_PONCTUEL = """
 <p>
 🎉 <strong>OFFRE DU MOMENT</strong><br>
 1 mois offert pour tout nouvel abonnement club <br>
-Valable jusqu’au 31/01
+Valable jusqu’au 01/03
 </p>
 """
 
