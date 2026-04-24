@@ -10,7 +10,10 @@ from pdf_reader import extraire_mon_planning
 app = FastAPI()
 
 # 📄 CONFIG PDF
-CHEMIN_PDF = "iFP.planning.pdf"   # ⬅️ mets le bon nom ici
+import os
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+CHEMIN_PDF = os.path.join(BASE_DIR, "iFP.planning.pdf")  # ⬅️ mets le bon nom ici
 MES_INITIALES = "GBd"
 # ===============================
 # 📝 MESSAGES CLIENT – À MODIFIER ICI
@@ -19,7 +22,7 @@ MES_INITIALES = "GBd"
 # 🔒 Message PERMANENT (consignes fixes)
 INFOS_PERMANENTES = """
 <ul>
-  <li>Merci d’arriver au moins <strong>45 minutes avant</strong>l'heure de vol</li>
+  <li>Merci d’arriver au moins <strong>45 minutes avant</strong> l'heure de vol</li>
   <li>Ce site ne permet pas de réserver mais simplement de voir mes créneaux de vols<br>
   Pour réserver, entrer votre bon cadeau sur le site iflyfrance.com</li>
   <li>Coaching niveau 1 ventre</li>
