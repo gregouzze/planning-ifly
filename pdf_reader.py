@@ -10,6 +10,8 @@ MOIS_FR = {
     "févr": "02",
     "fevr": "02",
     "mars": "03",
+    "avr.": "04",
+    "mai": "05",
 }
 
 def convertir_date_fr(date_str):
