@@ -31,8 +31,8 @@ INFOS_PERMANENTES = """
 MESSAGE_PONCTUEL = """
 <p>
 🎉 <strong>OFFRE DU MOMENT</strong><br>
-1 mois offert pour tout nouvel abonnement club <br>
-Valable jusqu’au 01/03
+De retour après un long congé ! mon planning sera mis à jour tous les lundi  <br>
+
 </p>
 """
 
